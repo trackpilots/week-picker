@@ -36,9 +36,9 @@ const WeekPicker = ({ onChange }) => {
       </button>
 
       {/* Display Current Week */}
-      <span>
+      <div className='w-max'>
         {startOfWeek.format('DD MMM')} - {endOfWeek.format('DD MMM')}
-      </span>
+      </div>
 
       {/* Next Week Button with Icon */}
       <button 
