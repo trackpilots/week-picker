@@ -32,7 +32,7 @@ import WeekPicker from "@trackpilots/week-picker";
 const App = () => {
   const [selectedWeek, setSelectedWeek] = useState(null);
 
-  const handleSelect = (week) => {
+  const handleChange = (week) => {
     setSelectedWeek(week);
     console.log("Selected Week:", week);
   };
@@ -42,9 +42,7 @@ const App = () => {
     <div className="p-4">
       <h2 className="text-lg font-bold">Date Picker</h2>
       <WeekPicker
-        selectedDate={new Date("2024-06-01")} 
-        onSelect={handleSelect}
-        selectedColor="#FF5733"
+        onChange={handleChange}
       />
       <p>Selected Week: {selectedWeek ? selectedWeek.week : "None"}</p>
     </div>
@@ -61,18 +59,13 @@ A React Select component that allows users to choose a Week
 
 | Prop Name      | Type              | Default          | Description                          |
 |---------------|------------------|----------------|----------------------------------|
-| `selectedDate` | `Date` or `null`  | `null`         | The date of the Week picker. |
-| `onSelect`    | `function`        | `() => {}`     | Triggered when a Week is selected. |
-| `selectedColor` | `string`        | `"#9D55FF"`    | Highlight color for the selected Week. |
-| `icon`        | `React.ElementType` | `IoCalendarOutline` | Custom calendar icon component. |
+| `onChange`    | `function`        | `() => {}`     | Triggered when a Week is selected. |
 ---
 
 ## **✨ Example**  
 ```sh
 <WeekPicker 
-  selectedDate={new Date("2024-06-01")} 
-  onSelect={(Week) => console.log("User selected:", week)} 
-  selectedColor="#007BFF"
+  onChange={(Week) => console.log("Selected Week:", week)} 
 />
 ```
 
